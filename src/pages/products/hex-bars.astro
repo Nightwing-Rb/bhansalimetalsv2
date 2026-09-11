@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+<BaseLayout title="Hex Bars" active="/products">
+  <section class="pagebanner">
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">Hex bars</p>
+      <h1>Hex Bars for industrial applications.</h1>
+      <p>Hexagonal bar products for components, fasteners and precision machining requirements.</p>
+    </div>
+  </section>
+  <section class="visual">
+    <img src="/assets/bars.jpg" alt="Hexagonal steel bar stock" />
+  </section>
+  <section class="section">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Product briefing</aside>
+      <div>
+        <h2>Machining-focused stock</h2>
+        <p>Hex bar 10–65 mm across flats in free-cutting and standard grades — the fastener and CNC shop staple, cold-drawn to h11 with MTC per heat.</p>
+        <div class="details">
+        <div>
+          <b>Product focus</b>
+          <span>Hex bar 10–65 mm A/F, cold-drawn, h11 tolerance</span>
+        </div>
+        <div>
+          <b>Grades</b>
+          <span>303, 304/304L, 316/316L, 416 free-cutting, 17-4PH</span>
+        </div>
+        <div>
+          <b>Enquiry details</b>
+          <span>Grade · A/F size · length · quantity · documentation</span>
+        </div>
+        <div>
+          <b>Next step</b>
+          <span>Contact the team for availability and technical requirements.</span>
+        </div>
+        </div>
+        <p style="margin-top:2rem">
+          <a class="button" href="/enquiry">Request a quote ↗</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>

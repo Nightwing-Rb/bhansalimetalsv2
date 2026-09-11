@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+const TILES = [
+  { href: '/technical/chemical-composition', s: 'Chemistry', t: 'Chemical Composition', d: '304 → 316, 310S, 321, duplex % chemistry.' },
+  { href: '/technical/grades', s: 'Grades', t: 'Stainless Grades', d: '200 / 300 / 400 series + PH & duplex selector.' },
+  { href: '/technical/mechanical-properties', s: 'Strength', t: 'Mechanical Properties', d: 'UTS, YS, elongation, hardness vs condition.' },
+  { href: '/technical/pipe-fittings', s: 'Fittings', t: 'Pipe Fitting Data', d: 'Buttweld + forged hub — elbows, stub-ends, tees, reducers, caps.' },
+  { href: '/technical/elbows', s: 'Elbows', t: 'Elbow Tables', d: '90° / 45° centre-to-face, wall and weights.' },
+  { href: '/technical/tees', s: 'Tees', t: 'Tee Tables', d: 'Straight tees, Sch 10S and 40S.' },
+  { href: '/technical/reducers', s: 'Reducers', t: 'Reducer Tables', d: 'Concentric and eccentric dimensions.' },
+  { href: '/technical/caps', s: 'Caps', t: 'Cap Tables', d: 'End-cap diameters and heights.' },
+  { href: '/technical/stub-ends', s: 'Stub-ends', t: 'Stub-End Tables', d: 'Lap-joint walls, lengths and radii.' },
+  { href: '/technical/buttweld-fittings', s: 'Buttweld', t: 'Buttweld Index', d: 'Scope, grades and family index.' },
+  { href: '/technical/forged-fittings', s: 'Forged', t: 'Forged Data', d: 'Socket-weld & threaded, ⅛″–4″ NB.' },
+  { href: '/technical/round-bars', s: 'Bars', t: 'Round Bar Data', d: 'Tolerances, weights, strain-hardened classes.' },
+  { href: '/technical/pipe-data', s: 'Pipes', t: 'Pipe Data', d: 'NB / OD / schedule / wall / weight charts.' },
+  { href: '/technical/nickel-alloy-data', s: 'Exotic', t: 'Nickel Alloy Data', d: 'Inconel / Monel / Hastelloy / Nickel chemistry.' },
+  { href: '/technical/flanges', s: 'Flanges', t: 'Flange Data', d: '150 LB drilling, OD, thickness, faces.' },
+  { href: '/technical/weight-formula', s: 'Calc', t: 'Weight Formula', d: 'Shop formulae plus tensile conversions.' },
+  { href: '/technical/nonferrous', s: 'Non-ferrous', t: 'Sheet Weights', d: 'Brass, copper, bronze and zinc charts.' },
+];
+---
+<BaseLayout title="Technical Information" active="/technical">
+  <PageHero eyebrow="Engineers' Library" title="Technical information hub" description="Chemical & mechanical data, pipe / flange / fitting dimensions, nickel-alloy data, weight formulae — everything to size your BOM right." banner="/banner-technical.png" bannerAlt="Engineering bench with pipe drawings and steel samples" />
+  <section class="section"><div class="container"><div class="grid-3">
+    {TILES.map(t => (<a class="card" href={t.href}><div class="card-body"><span class="badge">{t.s}</span><h3>{t.t} →</h3><p>{t.d}</p></div></a>))}
+  </div></div></section>
+  <CtaBand />
+</BaseLayout>

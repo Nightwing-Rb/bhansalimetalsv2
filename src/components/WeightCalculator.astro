@@ -1,0 +1,96 @@
+---
+---
+<div class="calc reveal" id="weightCalc">
+  <div class="calc-form">
+    <h4>Tools · Weight calculator</h4>
+    <h2>Mill formulae, density-corrected.</h2>
+    <p>Use for BOM estimates — confirmed weight ships on the MTC.</p>
+    <div class="calc-row">
+      <div><label for="wcForm">Form</label>
+        <select id="wcForm">
+          <option value="round">Round bar</option>
+          <option value="square">Square bar</option>
+          <option value="hex">Hex bar</option>
+          <option value="sheet">Sheet / plate (per m²)</option>
+          <option value="pipe">Pipe (OD × wall)</option>
+        </select>
+      </div>
+      <div><label for="wcAlloy">Alloy family</label>
+        <select id="wcAlloy">
+          <option value="7.90">Stainless 300/400 (7.90)</option>
+          <option value="7.85">Carbon steel (7.85)</option>
+          <option value="8.40">Inconel (8.40)</option>
+          <option value="8.80">Monel (8.80)</option>
+          <option value="8.90">Hastelloy (8.90)</option>
+          <option value="8.90">Nickel 200/201 (8.90)</option>
+          <option value="8.00">Duplex 2205 (8.00)</option>
+        </select>
+      </div>
+    </div>
+    <div class="calc-row">
+      <div><label for="wcA" id="wcALabel">Diameter — mm</label><input id="wcA" type="number" min="0" step="0.1" value="25" /></div>
+      <div id="wcBWrap"><label for="wcB" id="wcBLabel">Length — m</label><input id="wcB" type="number" min="0" step="0.1" value="6" /></div>
+    </div>
+    <div class="calc-row" id="wcLenRow" style="display:none">
+      <div><label for="wcLen">Length — m</label><input id="wcLen" type="number" min="0" step="0.1" value="6" /></div>
+      <div><label for="wcQty">Qty — pcs</label><input id="wcQty" type="number" min="1" step="1" value="1" /></div>
+    </div>
+  </div>
+  <div class="calc-out">
+    <span style="font:500 11px var(--mono);letter-spacing:.14em" id="wcFormula">Ø² × 0.006165 × L</span>
+    <span class="big" id="wcResult">—</span>
+    <span style="font:500 11px var(--mono);letter-spacing:.14em" id="wcUnit">KG / PIECE</span>
+    <p style="margin-top:1.2rem"><a class="button" style="background:#fff;color:var(--blue)!important" href="/enquiry">Enquire with this weight ↗</a></p>
+  </div>
+</div>
+<script>
+  const form = document.getElementById('wcForm') as HTMLSelectElement;
+  const alloy = document.getElementById('wcAlloy') as HTMLSelectElement;
+  const a = document.getElementById('wcA') as HTMLInputElement;
+  const b = document.getElementById('wcB') as HTMLInputElement;
+  const aLabel = document.getElementById('wcALabel')!;
+  const bLabel = document.getElementById('wcBLabel')!;
+  const bWrap = document.getElementById('wcBWrap')!;
+  const lenRow = document.getElementById('wcLenRow')!;
+  const qty = document.getElementById('wcQty') as HTMLInputElement;
+  const len = document.getElementById('wcLen') as HTMLInputElement;
+  const res = document.getElementById('wcResult')!;
+  const formula = document.getElementById('wcFormula')!;
+  const unit = document.getElementById('wcUnit')!;
+
+  function calc() {
+    const rho = parseFloat(alloy.value) / 7.9;
+    const A = parseFloat(a.value) || 0, B = parseFloat(b.value) || 0;
+    let kg = 0, f = '';
+    switch (form.value) {
+      case 'round': kg = A * A * 0.00623 * rho * B; f = 'Ø² × 0.00623 × L'; unit.textContent = 'KG / PIECE'; break;
+      case 'square': kg = A * A * 0.00787 * rho * B; f = 'SIDE² × 0.00787 × L'; unit.textContent = 'KG / PIECE'; break;
+      case 'hex': kg = A * A * 0.00679 * rho * B; f = 'A/F² × 0.00679 × L'; unit.textContent = 'KG / PIECE'; break;
+      case 'sheet': {
+        const L2 = parseFloat(len.value) || 0, Q2 = parseInt(qty.value) || 1;
+        kg = A * B * 8 * rho * L2 * Q2; f = 'T × W × 8 × L'; unit.textContent = Q2 > 1 ? `KG / ${Q2} SHEETS` : 'KG / SHEET';
+        break;
+      }
+      case 'pipe': {
+        const L = parseFloat(len.value) || 0, Q = parseInt(qty.value) || 1;
+        kg = (A - B) * B * 0.02466 * rho * L * Q; f = '(OD−W) × W × 0.02466 × L'; unit.textContent = Q > 1 ? `KG / ${Q} PCS` : 'KG / PIECE';
+        break;
+      }
+    }
+    res.textContent = kg > 0 ? (kg >= 100 ? Math.round(kg).toLocaleString('en-IN') : kg.toFixed(2)) : '—';
+    formula.textContent = f;
+  }
+  function layout() {
+    const v = form.value;
+    lenRow.style.display = (v === 'pipe' || v === 'sheet') ? 'grid' : 'none';
+    bWrap.style.display = v === 'pipe' ? 'none' : 'block';
+    if (v === 'round') { aLabel.textContent = 'Diameter — mm'; bLabel.textContent = 'Length — m'; }
+    if (v === 'square') { aLabel.textContent = 'Side — mm'; bLabel.textContent = 'Length — m'; }
+    if (v === 'hex') { aLabel.textContent = 'Across flats — mm'; bLabel.textContent = 'Length — m'; }
+    if (v === 'sheet') { aLabel.textContent = 'Thickness — mm'; bLabel.textContent = 'Width — m'; }
+    if (v === 'pipe') { aLabel.textContent = 'OD — mm'; bLabel.textContent = 'Wall — mm'; }
+    calc();
+  }
+  [form, alloy, a, b, len, qty].forEach(el => el?.addEventListener('input', () => { layout(); }));
+  layout();
+</script>

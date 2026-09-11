@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import WeightCalculator from '../components/WeightCalculator.astro';
+---
+<BaseLayout title="Metals for Critical Service" active="/">
+  <main>
+    <section class="hero">
+      <img src="/hero-home.png" alt="Container port terminal at dawn with ship-to-shore cranes" />
+      <div class="shell">
+        <p class="eyebrow">Mumbai, India · Serving global industry</p>
+        <h1>Metals built for<br /><em>critical service.</em></h1>
+        <p class="lede">Stainless steel, high-nickel alloys, fittings and flanges supplied with the technical clarity your project requires.</p>
+        <p style="margin-top:2rem"><a class="button" href="/enquiry">Request a quote ↗</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell intro">
+        <div>
+          <p class="eyebrow" style="color:var(--blue)">Bhansali Metals</p>
+          <h2>Material expertise without unnecessary noise.</h2>
+        </div>
+        <div>
+          <p>We help procurement and engineering teams source metal products for applications where performance, reliability and responsiveness matter.</p>
+          <p>Manufacturer, exporter & Mukand-authorised stockist — 30,000 TPA across 100+ chemistries, every heat with MTC.</p>
+          <p><a class="button" href="/products">Explore product range ↗</a></p>
+          <div class="specs">
+            <div><b>Location</b><span>Mumbai, India</span></div>
+            <div><b>Experience</b><span>35+ years · 30,000 TPA</span></div>
+            <div><b>Supply model</b><span>Domestic & export</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="shell">
+        <p class="eyebrow" style="color:var(--blue)">Product range</p>
+        <div class="productgrid">
+          <a class="product" href="/products/flanges"><span>Flanges & components</span><h3>Flanges</h3><p>WNRF, SORF & blind flanges to ANSI/DIN in stainless and exotic alloys.</p></a>
+          <a class="product" href="/products/pipe-fittings"><span>Pipe fittings</span><h3>Pipe Fittings</h3><p>Buttweld and forged fittings for routing, joining and adapting process piping.</p></a>
+          <a class="product" href="/products/pipes-tubes"><span>Pipes & tubes</span><h3>Pipes & Tubes</h3><p>Seamless and welded pipe for fabrication, process systems and maintenance.</p></a>
+          <a class="product" href="/products/sheets-plates"><span>Sheets & plates</span><h3>Sheets & Plates</h3><p>Flat products for fabrication, pressure applications and corrosive environments.</p></a>
+          <a class="product" href="/products/round-bars-squares"><span>Round bars</span><h3>Round Bars</h3><p>Bright and black bar for machining, fasteners and engineered components.</p></a>
+          <a class="product" href="/products/hex-bars"><span>Hex bars</span><h3>Hex Bars</h3><p>Hexagonal bar for components, fasteners and precision machining.</p></a>
+          <a class="product" href="/products/flat-bars"><span>Flat bars</span><h3>Flat Bars</h3><p>Flat bar for brackets, supports, fabrication and structural use.</p></a>
+          <a class="product" href="/products/wire"><span>Wire products</span><h3>Wire</h3><p>0.6–8 mm wire in soft to full-hard tempers for fabrication and specialists.</p></a>
+          <a class="product" href="/products/high-nickel-alloys"><span>High-nickel alloys</span><h3>High Nickel Alloys</h3><p>Inconel, Monel and Hastelloy for heat and corrosion resistance.</p></a>
+          <a class="product" href="/products/duplex-super-duplex"><span>Duplex alloys</span><h3>Duplex & Super Duplex</h3><p>2205 duplex for chloride, marine and high-strength service.</p></a>
+          <a class="product" href="/products/stainless-steel"><span>Stainless steel</span><h3>Stainless Steel</h3><p>304/316 and specialist grades across bar, flat, tube and components.</p></a>
+          <a class="product" href="/products/fasteners"><span>Fasteners</span><h3>Fasteners</h3><p>M6–M64 bolts, nuts and threaded bar, proof-load tested.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="shell">
+        <p class="eyebrow" style="color:var(--blue)">Tools · Weight calculator</p>
+        <h2 style="font-size:clamp(2.4rem,4.4vw,4rem); margin-bottom:2.5rem">Estimate before you enquire.</h2>
+        <WeightCalculator />
+      </div>
+    </section>
+  </main>
+  <CtaBand />
+</BaseLayout>

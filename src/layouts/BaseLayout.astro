@@ -1,0 +1,149 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  active?: string;
+}
+const { title, description = 'Bhansali Metals — stainless steel, high-nickel alloys, fittings and flanges from Mumbai, India.', active = '/' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Bhansali Metals</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body>
+    <Header active={active} />
+    <main>
+      <slot />
+    </main>
+    <button id="toTop" type="button" aria-label="Back to top">↑</button>
+    <script>
+      (() => {
+        // Lenis smooth scroll (skipped for reduced-motion users).
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const scrollTop = () => {
+          const lenis = (window as any).__lenis;
+          if (lenis) lenis.scrollTo(0);
+          else window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+        };
+        if (!reduced) {
+          import('lenis').then(({ default: Lenis }) => {
+            const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+            (window as any).__lenis = lenis;
+            const raf = (t: number) => {
+              lenis.raf(t);
+              requestAnimationFrame(raf);
+            };
+            requestAnimationFrame(raf);
+          }).catch(() => {});
+        }
+        // Sidebar clicks stash the scroll position; the inline script
+        // below consumes it before first paint on the next page.
+        document.querySelectorAll('.sidebar-card a[href^="/"]').forEach((a) => {
+          a.addEventListener('click', () => {
+            try {
+              sessionStorage.setItem('sb-y', String(window.scrollY));
+              sessionStorage.setItem('sb-keep', '1');
+            } catch {}
+          });
+        });
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('#site-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(open));
+          });
+          menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }));
+        }
+        document.querySelectorAll('[data-enquiry-form]').forEach((form) => {
+          const f = form as HTMLFormElement;
+          if (f.querySelector('.form-status')) return;
+          const status = document.createElement('p');
+          status.className = 'form-status';
+          status.setAttribute('role', 'status');
+          f.append(status);
+          f.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (!f.reportValidity()) return;
+            const data = new FormData(f);
+            const subject = `Website enquiry from ${data.get('name') || 'Bhansali Metals website'}`;
+            const body = [...data.entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
+            window.location.href = `mailto:sales@bhansalimetals.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            status.textContent = 'Your email app should open with the enquiry ready to send. If it does not, email sales@bhansalimetals.com directly.';
+          });
+        });
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              (e.target as HTMLElement).classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+        const toTop = document.getElementById('toTop');
+        const onScroll = () => {
+          if (window.scrollY > 400) toTop?.classList.add('show');
+          else toTop?.classList.remove('show');
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        toTop?.addEventListener('click', scrollTop);
+        document.querySelectorAll('[data-copy]').forEach((b) => {
+          b.addEventListener('click', async () => {
+            const btn = b as HTMLButtonElement;
+            const v = btn.getAttribute('data-copy') || '';
+            try {
+              await navigator.clipboard.writeText(v);
+            } catch {
+              const ta = document.createElement('textarea');
+              ta.value = v;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              ta.remove();
+            }
+            const old = btn.getAttribute('data-label') || btn.textContent;
+            btn.setAttribute('data-label', old || '');
+            btn.textContent = 'Copied ✓';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = old;
+              btn.classList.remove('copied');
+            }, 1200);
+          });
+        });
+      })();
+    </script>
+    <script is:inline>
+      try {
+        if (sessionStorage.getItem('sb-keep') === '1') {
+          sessionStorage.removeItem('sb-keep');
+          var sbY = parseInt(sessionStorage.getItem('sb-y') || '0', 10);
+          if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+          document.documentElement.style.scrollBehavior = 'auto';
+          window.scrollTo(0, sbY);
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              document.documentElement.style.scrollBehavior = '';
+            });
+          });
+        }
+      } catch (e) {}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout title="Contact Us" active="/contactus">
+  <PageHero eyebrow="Get in touch" title="Contact Bhansali Metals" description="Head office in Mumbai + exports division. Call, email or drop by — we respond within one business day." crumbs={[{label:'Contact Us'}]} />
+  <section class="section">
+    <div class="container layout-2col">
+      <div style="display:grid; gap:16px">
+        <div class="prose">
+          <h3>🏢 Head Office</h3>
+          <p><strong>Address:</strong> {SITE.address}<br/>
+          <strong>Tel:</strong> {SITE.phones.join(' / ')}<br/>
+          <strong>Fax:</strong> {SITE.fax}<br/>
+          <strong>Email:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a> • <a href={`mailto:${SITE.email2}`}>{SITE.email2}</a><br/>
+          <strong>Web:</strong> www.bhansalimetals.com</p>
+          <div class="table-wrap"><table class="data">
+            <tr><th>Contact Person</th><th>Phone</th></tr>
+            <tr><td>Mr. Harakchand Bhansali</td><td>+91 98200 27908</td></tr>
+            <tr><td>Mr. Nitin Bhansali</td><td>+91 98922 44451</td></tr>
+          </table></div>
+        </div>
+        <div class="prose">
+          <h3>🌍 Bhansali Exports</h3>
+          <p><strong>Address:</strong> {SITE.exportsAddress}<br/>
+          <strong>Contact:</strong> Mr. Kushal Bhansali (+91 98338 15578)<br/>
+          <strong>Email:</strong> <a href="mailto:kushal@bhansaliexports.com">kushal@bhansaliexports.com</a></p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+            <a class="btn btn-primary" href="/enquiry">Send Enquiry →</a>
+            <a class="btn btn-ghost" href={`mailto:${SITE.email}`}>Email Sales</a>
+          </div>
+        </div>
+        <div class="prose">
+          <h3>🗺️ Find us</h3>
+          <iframe title="Bhansali Metals map" src="https://www.google.com/maps?q=S.V.P+Road+7th+Kethwadi+Mumbai+400004&output=embed" style="width:100%; height:300px; border:0; border-radius:12px" loading="lazy"></iframe>
+        </div>
+      </div>
+      <aside class="sidebar-card"><h4>Our Products</h4>
+<span class="side-group">Rods & Bars</span>
+<a class="side-sub" href="/products/bright-bars">Bright Bars</a>
+<a class="side-sub" href="/products/black-bars">Black Bars</a>
+<a class="side-sub" href="/products/round-bars-squares">Round / Square / Hex</a>
+<a class="side-sub" href="/products/hex-bars">Hex Bars</a>
+<a class="side-sub" href="/products/flat-bars">Flat Bars</a>
+<a class="side-sub" href="/products/wire">Wire</a>
+<a href="/products/sheets-plates">Sheets & Plates</a>
+<a href="/products/pipes-tubes">Pipes & Tubes</a>
+<span class="side-group">Components</span>
+<a class="side-sub" href="/products/flanges">Flanges</a>
+<a class="side-sub" href="/products/fasteners">Fasteners</a>
+<a class="side-sub" href="/products/pipe-fittings">Pipe Fittings</a>
+<span class="side-group">High-Nickel Alloys</span>
+<a class="side-sub" href="/products/high-nickel-alloys">All High-Nickel Alloys</a>
+<a class="side-sub" href="/products/monel-500">Monel 500</a>
+<a class="side-sub" href="/products/hastelloy-c276">Hastelloy C-276</a>
+<a class="side-sub" href="/products/hastelloy-c22">Hastelloy C-22</a>
+<a class="side-sub" href="/products/hastelloy-b2">Hastelloy B2</a>
+<a class="side-sub" href="/products/hastelloy-x">Hastelloy X</a>
+<a class="side-sub" href="/products/nickel-200-201">Nickel 200 / 201</a>
+<a href="/products/duplex-super-duplex">Duplex & Super Duplex</a>
+<a href="/products/stainless-steel">Stainless Steel</a>
+<a href="/enquiry">Get Quote →</a></aside>
+    </div>
+  </section>
+</BaseLayout>

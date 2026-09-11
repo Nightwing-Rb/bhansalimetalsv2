@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+<BaseLayout title="Pipes & Tubes" active="/products">
+  <PageHero eyebrow="Seamless & Welded" title="Pipes & Tubes" description="Stainless & high-nickel pipes for oil & gas, auto, construction & engineering. Seamless + ERW/EFW." crumbs={[{label:'Products', href:'/products'},{label:'Pipes & Tubes'}]} />
+  <section class="section">
+    <div class="container layout-2col">
+      <div class="prose">
+        <img class="inline" src="/images/p1.jpg" alt="Pipes & Tubes" onerror="this.src='/images/b2.jpg'" />
+        <p>We offer a wide range of pipes meeting application needs of automotive, oil & gas, engineering, construction & process industries.</p>
+  <h3>Range</h3><div class="table-wrap"><table class="data"><tr><th>Param</th><th>Detail</th></tr>
+  <tr><td>Type</td><td>Seamless, ERW, EFW</td></tr>
+  <tr><td>Size</td><td>1/8” NB – 24” NB, Sch 5S – XXS</td></tr>
+  <tr><td>Grades</td><td>304/304L, 316/316L, 310S, 321, 2205, Inconel 600/625/800, Monel 400, Hastelloy C-276/B2</td></tr>
+  <tr><td>Ends</td><td>Plain, bevelled, threaded; polished / pickled</td></tr></table></div>
+  <p>Hydro-tested, PMI-checked, with MTC. See <a href="/technical/pipe-data">Pipe Data</a> for dimensions & weights.</p>
+      </div>
+      <aside class="sidebar-card"><h4>Our Products</h4>
+<span class="side-group">Rods & Bars</span>
+<a class="side-sub" href="/products/bright-bars">Bright Bars</a>
+<a class="side-sub" href="/products/black-bars">Black Bars</a>
+<a class="side-sub" href="/products/round-bars-squares">Round / Square / Hex</a>
+<a class="side-sub" href="/products/hex-bars">Hex Bars</a>
+<a class="side-sub" href="/products/flat-bars">Flat Bars</a>
+<a class="side-sub" href="/products/wire">Wire</a>
+<a href="/products/sheets-plates">Sheets & Plates</a>
+<a href="/products/pipes-tubes">Pipes & Tubes</a>
+<span class="side-group">Components</span>
+<a class="side-sub" href="/products/flanges">Flanges</a>
+<a class="side-sub" href="/products/fasteners">Fasteners</a>
+<a class="side-sub" href="/products/pipe-fittings">Pipe Fittings</a>
+<span class="side-group">High-Nickel Alloys</span>
+<a class="side-sub" href="/products/high-nickel-alloys">All High-Nickel Alloys</a>
+<a class="side-sub" href="/products/monel-500">Monel 500</a>
+<a class="side-sub" href="/products/hastelloy-c276">Hastelloy C-276</a>
+<a class="side-sub" href="/products/hastelloy-c22">Hastelloy C-22</a>
+<a class="side-sub" href="/products/hastelloy-b2">Hastelloy B2</a>
+<a class="side-sub" href="/products/hastelloy-x">Hastelloy X</a>
+<a class="side-sub" href="/products/nickel-200-201">Nickel 200 / 201</a>
+<a href="/products/duplex-super-duplex">Duplex & Super Duplex</a>
+<a href="/products/stainless-steel">Stainless Steel</a>
+<a href="/enquiry">Get Quote →</a></aside>
+    </div>
+  </section>
+  <CtaBand /><div style="height:28px"></div>
+</BaseLayout>

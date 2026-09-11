@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+<BaseLayout title="Wire" active="/products">
+  <section class="pagebanner">
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">Wire products</p>
+      <h1>Wire for industrial applications.</h1>
+      <p>Wire forms for industrial fabrication and specialist applications.</p>
+    </div>
+  </section>
+  <section class="visual">
+    <img src="/assets/bars.jpg" alt="Drawn stainless wire coils" />
+  </section>
+  <section class="section">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Product briefing</aside>
+      <div>
+        <h2>Drawn wire supply</h2>
+        <p>Drawn wire 0.6–8 mm in soft to full-hard tempers — for fasteners, springs, mesh and specialist fabrication, bright, matte or coated finish.</p>
+        <div class="details">
+        <div>
+          <b>Product focus</b>
+          <span>Wire 0.6–8 mm, soft / 1/8 / 1/4 / 1/2 / full-hard</span>
+        </div>
+        <div>
+          <b>Grades</b>
+          <span>201, 302HQ, 304/304L, 316/316L, 308LER, 430L, Hastelloy & nickel wire</span>
+        </div>
+        <div>
+          <b>Enquiry details</b>
+          <span>Grade · diameter · temper · finish · coil weight</span>
+        </div>
+        <div>
+          <b>Next step</b>
+          <span>Contact the team for availability and technical requirements.</span>
+        </div>
+        </div>
+        <p style="margin-top:2rem">
+          <a class="button" href="/enquiry">Request a quote ↗</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>

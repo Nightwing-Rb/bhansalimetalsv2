@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+<BaseLayout title="Flat Bars" active="/products">
+  <section class="pagebanner">
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">Flat bars</p>
+      <h1>Flat Bars for industrial applications.</h1>
+      <p>Flat bar materials for brackets, supports, fabrication and structural applications.</p>
+    </div>
+  </section>
+  <section class="visual">
+    <img src="/assets/plates.jpg" alt="Flat steel bar products" />
+  </section>
+  <section class="section">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Product briefing</aside>
+      <div>
+        <h2>Common & custom dimensions</h2>
+        <p>Flat bar in stainless and high-nickel grades, slit and levelled for brackets, supports and structural fabrication. Custom widths slit to order with MTC per heat.</p>
+        <div class="details">
+        <div>
+          <b>Product focus</b>
+          <span>Flat bar 20–200 mm wide, 3–25 mm thick, HRAP / CR finish</span>
+        </div>
+        <div>
+          <b>Grades</b>
+          <span>304/304L, 316/316L, 310S, 321, 2205 duplex, Inconel & Monel on request</span>
+        </div>
+        <div>
+          <b>Enquiry details</b>
+          <span>Grade · width × thickness · length · quantity</span>
+        </div>
+        <div>
+          <b>Next step</b>
+          <span>Contact the team for availability and technical requirements.</span>
+        </div>
+        </div>
+        <p style="margin-top:2rem">
+          <a class="button" href="/enquiry">Request a quote ↗</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>

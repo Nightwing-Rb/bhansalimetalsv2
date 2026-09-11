@@ -1,0 +1,37 @@
+---
+interface Props { active?: string }
+const { active = '/' } = Astro.props;
+const isActive = (h: string) => (h === '/' ? active === '/' : active.startsWith(h));
+---
+<div class="top"><div class="shell"><a href="mailto:sales@bhansalimetals.com">sales@bhansalimetals.com</a><span>Manufacturer · Exporter · Domestic Supplier</span><a href="tel:+912267438356">+91 22 6743 8356</a></div></div>
+<header class="header"><div class="shell nav"><a class="brand" href="/"><img src="/logo.png" alt="Bhansali Metals" /></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button><nav class="links" id="site-menu">
+  <span class="has-dropdown"><a href="/products" class={isActive('/products') ? 'active' : ''}>Products</a>
+    <span class="dropdown">
+      <strong>Bar & Rod</strong>
+      <a href="/products/bright-bars">Bright Bars</a>
+      <a href="/products/black-bars">Black Bars</a>
+      <a href="/products/round-bars-squares">Round Bars</a>
+      <a href="/products/hex-bars">Hex Bars</a>
+      <a href="/products/flat-bars">Flat Bars</a>
+      <a href="/products/wire">Wire</a>
+      <strong>Flat & Tube</strong>
+      <a href="/products/sheets-plates">Sheets & Plates</a>
+      <a href="/products/pipes-tubes">Pipes & Tubes</a>
+      <strong>Components</strong>
+      <a href="/products/flanges">Flanges</a>
+      <a href="/products/fasteners">Fasteners</a>
+      <a href="/products/pipe-fittings">Pipe Fittings</a>
+      <strong>Exotic Alloys</strong>
+      <a href="/products/high-nickel-alloys">High-Nickel Alloys</a>
+      <a href="/products/duplex-super-duplex">Duplex & Super Duplex</a>
+      <a href="/products/stainless-steel">Stainless Steel</a>
+      <a href="/products/monel-500">Monel 500</a>
+      <a href="/products/hastelloy-c276">Hastelloy C-276</a>
+      <a href="/products/nickel-200-201">Nickel 200 / 201</a>
+    </span>
+  </span>
+  <a href="/quality" class={isActive('/quality') ? 'active' : ''}>Quality</a>
+  <a href="/technical" class={isActive('/technical') ? 'active' : ''}>Technical</a>
+  <a href="/aboutus" class={isActive('/aboutus') ? 'active' : ''}>About</a>
+  <a class="cta" href="/enquiry">Request a quote ↗</a>
+</nav></div></header>

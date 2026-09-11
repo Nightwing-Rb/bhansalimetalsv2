@@ -1,0 +1,12 @@
+---
+interface Props { eyebrow: string; title: string; description?: string; banner?: string; bannerAlt?: string }
+const { eyebrow, title, description, banner, bannerAlt = '' } = Astro.props;
+---
+<section class="pagebanner">
+  {banner && <img class="banner-img" src={banner} alt={bannerAlt} />}
+  <div class="shell">
+    <p class="eyebrow" style="color:var(--blue)">{eyebrow}</p>
+    <h1 set:html={title} />
+    {description && <p>{description}</p>}
+  </div>
+</section>

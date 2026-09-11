@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<BaseLayout title="Quality" active="/quality">
+  <PageHero eyebrow="Quality System" title="Quality" description="Quality assurance starts with understanding the customer's requirement — and continues until complete satisfaction with delivery." banner="/banner-quality.png" bannerAlt="Caliper measuring a polished stainless bar" />
+  <section class="section">
+    <div class="container layout-2col">
+      <div class="prose">
+        <h3>Quality assurance</h3>
+        <p>Quality Assurance at Bhansali Metals starts with understanding the customer's requirement and continues till the customer is completely satisfied with the delivery of products and services. Control procedures are well defined and thoroughly implemented. We run a result-oriented work culture to fulfil customer needs in cost, quality and delivery — enhancing people and plant effectiveness safely, aiming towards zero losses, with continual improvement of the Quality Management System through teamwork, training and focus on actions and results.</p>
+        <p>The system is guided by principles supporting our working culture of respect, self-management, open communication and creativity:</p>
+        <div class="details">
+          <div><b>Industry best</b><span>We strive to be the best in our industry</span></div>
+          <div><b>Customers first</b><span>We care about our customers</span></div>
+          <div><b>Commitments kept</b><span>We do our absolute best to honour our commitments</span></div>
+          <div><b>Integrity</b><span>We always act with integrity and fairness</span></div>
+        </div>
+        <h3>Our excellence</h3>
+        <p>Quality is our prime concern, held through committed personnel and sound infrastructure using only the finest input material. Every single piece ships with test certificates and reports — Material Test Certificates accompany every supply — while our experts keep vigil on product quality and we continually improve to serve clients better.</p>
+        <h3>Quality control</h3>
+        <p>Stringent control measures ensure accurate dimensions and mechanical properties. Every product passes through: material control system · process control system · machining and dimensional control · certification and supplementary test · finishing and marketing. Billets are 100% ultrasonically controlled after homogenisation for automotive, aircraft and space-grade duty.</p>
+      </div>
+      <aside class="sidebar-card"><h4>Quality Links</h4>
+        <a href="/certificates">Certificates</a>
+        <a href="/technical">Technical Info</a>
+        <a href="/technical/chemical-composition">Chemical Composition</a>
+        <a href="/technical/mechanical-properties">Mechanical Properties</a>
+        <a href="/enquiry">Request MTC Sample</a>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>

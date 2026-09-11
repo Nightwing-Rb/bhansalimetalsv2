@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout title="Enquiry" active="/enquiry">
+  <PageHero eyebrow="24-hour quote" title="Send your enquiry" description="Share your grade, size, quantity & delivery location. Attach BOM if ready — our engineers reply within 24 hours." banner="/banner-enquiry.png" bannerAlt="Overhead crane carrying steel bundles down a sunlit stockyard aisle" />
+  <section class="section">
+    <div class="container layout-2col">
+      <form class="prose" id="enquiryForm">
+        <h3>Get a fast, accurate quote</h3>
+        <div class="form-grid">
+          <div class="field"><label for="name">Full Name *</label><input id="name" name="name" required placeholder="e.g. Rahul Sharma" /></div>
+          <div class="field"><label for="company">Company</label><input id="company" name="company" placeholder="Company / Organisation" /></div>
+          <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required placeholder="you@company.com" /></div>
+          <div class="field"><label for="phone">Phone *</label><input id="phone" name="phone" required placeholder="+91 ..." /></div>
+          <div class="field"><label for="product">Product *</label><select id="product" name="product" required>
+            <option value="">Select…</option><option>Bright Bars</option><option>Black Bars</option><option>Sheets & Plates</option><option>Round Bars & Squares</option><option>Pipes & Tubes</option><option>Flanges</option><option>Fasteners</option><option>Pipe Fittings</option><option>High Nickel Alloys (Inconel/Monel/Hastelloy)</option><option>Other</option>
+          </select></div>
+          <div class="field"><label for="grade">Grade / Spec</label><input id="grade" name="grade" placeholder="e.g. SS 316L, Inconel 625, ASTM A193 B8M" /></div>
+          <div class="field"><label for="size">Size / Dimensions</label><input id="size" name="size" placeholder="e.g. 25mm dia x 6m, 150 NB Sch 40" /></div>
+          <div class="field"><label for="qty">Quantity</label><input id="qty" name="qty" placeholder="e.g. 500 kg / 100 pcs" /></div>
+          <div class="field full"><label for="msg">Requirement Details *</label><textarea id="msg" name="message" required placeholder="Grade, size, quantity, delivery city, inspection (TPI) needs…"></textarea></div>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit">Send via Email →</button>
+          <button class="btn btn-ghost" type="button" id="waBtn">Send via WhatsApp</button>
+        </div>
+        <p id="formNote" style="font-size:.85rem; color:#64748B"></p>
+      </form>
+      <aside class="sidebar-card">
+        <h4>Why enquire with us?</h4>
+        <p style="font-size:.9rem">✓ 35+ years stock + mill backup<br/>✓ MTC + TPI support<br/>✓ Export packing & docs<br/>✓ 24-hr response</p>
+        <hr style="border:0; border-top:1px solid #E2E8F0; margin:14px 0" />
+        <div class="copy-list">
+          <span class="copy-label">Call — tap to copy</span>
+          {SITE.phones.map((ph) => (<button class="copy-chip" type="button" data-copy={ph} title="Click to copy">{ph}</button>))}
+          <span class="copy-label">Email — tap to copy</span>
+          <button class="copy-chip" type="button" data-copy={SITE.email} title="Click to copy">{SITE.email}</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <script>
+    const form = document.getElementById('enquiryForm');
+    const note = document.getElementById('formNote');
+    function buildBody() {
+      const fd = new FormData(form as HTMLFormElement);
+      return [...fd.entries()].map(([k,v]) => `${k}: ${v}`).join('\n');
+    }
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const subject = encodeURIComponent('Website Enquiry — Bhansali Metals');
+      const body = encodeURIComponent(buildBody());
+      window.location.href = `mailto:sales@bhansalimetals.com?subject=${subject}&body=${body}`;
+      if (note) note.textContent = 'Opening your email app with the enquiry pre-filled…';
+    });
+    document.getElementById('waBtn')?.addEventListener('click', () => {
+      const text = encodeURIComponent('Hello Bhansali Metals,\n' + buildBody());
+      window.open(`https://wa.me/919892244451?text=${text}`, '_blank');
+    });
+  </script>
+</BaseLayout>

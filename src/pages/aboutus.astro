@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<BaseLayout title="About" active="/aboutus">
+  <section class="pagebanner">
+    <img class="banner-img" src="/banner-about.png" alt="Steel stockyard aisle with racked bars and pipes" />
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">About Bhansali Metals</p>
+      <h1>A practical partner for industrial metal supply.</h1>
+      <p>We support domestic and international customers with a focused materials range and technically clear enquiries.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell intro">
+      <div>
+        <h2>Built around responsive, relevant supply.</h2>
+      </div>
+      <div>
+        <p>Bhansali Metals is positioned around stainless steel, high-nickel alloys, pipe fittings, flanges, bars and flat products for industrial use.</p>
+        <p>Our role is to make sourcing clearer: understand the product requirement, confirm the right details, and support the next stage of the project.</p>
+        <div class="specs">
+          <div><b>Location</b><span>Mumbai, India</span></div>
+          <div><b>Supply model</b><span>Domestic & export</span></div>
+          <div><b>Focus</b><span>Industrial materials</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Company record</aside>
+      <div>
+        <h2>35+ years behind every heat.</h2>
+        <p>One of the leading manufacturers, exporters and domestic suppliers of stainless black bars, forged bars, bright bars, hex/square bars and wire rods — and authorised Mukand Ltd dealer for black bars, wire rods, billets and blooms in 300, 200 and 400 series plus duplex.</p>
+        <div class="details">
+          <div><b>Capacity</b><span>30,000 TPA with in-house casting, machining and QC laboratory</span></div>
+          <div><b>Documentation</b><span>MTC per heat, gate-pass paperwork, BV / SGS / TÜV / DNV inspection hosted</span></div>
+          <div><b>Mission</b><span>Technically sound solutions that make us the preferred Fitting & Flanges manufacturer</span></div>
+          <div><b>Customers</b><span>Govt., semi-govt., public and private sectors, domestic and export</span></div>
+        </div>
+        <p style="margin-top:2rem"><a class="button" href="/enquiry">Request a quote ↗</a></p>
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>

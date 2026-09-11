@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+<BaseLayout title="Stainless Steel" active="/products">
+  <section class="pagebanner">
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">Stainless steel</p>
+      <h1>Stainless Steel for industrial applications.</h1>
+      <p>Versatile stainless steel product forms for industrial, fabrication and process applications.</p>
+    </div>
+  </section>
+  <section class="visual">
+    <img src="/assets/pipes.jpg" alt="Stainless steel pipe products" />
+  </section>
+  <section class="section">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Product briefing</aside>
+      <div>
+        <h2>304/304L · 316/316L</h2>
+        <p>The workhorse grades across every form we stock — bar, flat, tube, flanges, fasteners and fittings — plus 310S, 321 and 400-series for heat, stabilised and magnetic service.</p>
+        <div class="details">
+        <div>
+          <b>Product focus</b>
+          <span>304/304L, 316/316L across bar · flat · tube · components</span>
+        </div>
+        <div>
+          <b>Also stocked</b>
+          <span>310S, 321/347, 410, 420, 430, 2205 duplex, 17-4PH</span>
+        </div>
+        <div>
+          <b>Enquiry details</b>
+          <span>Grade · form · dimensions · quantity · documentation</span>
+        </div>
+        <div>
+          <b>Next step</b>
+          <span>Contact the team for availability and technical requirements.</span>
+        </div>
+        </div>
+        <p style="margin-top:2rem">
+          <a class="button" href="/enquiry">Request a quote ↗</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>

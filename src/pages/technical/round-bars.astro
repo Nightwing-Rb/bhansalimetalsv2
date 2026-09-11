@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+<BaseLayout title="Round Bar Data — Sizes, Weights & Tolerances" active="/technical">
+  <PageHero eyebrow="Technical Library" title="Round Bar Data" description="Diameter versus kg/m, drawn-bar tolerances and extruded-bar tolerances by alloy group." />
+  <section class="section">
+    <div class="container layout-2col">
+      <div class="prose">
+<h3>Weight reference</h3>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Dia (mm)</th><th>kg/m</th><th>Dia (in)</th><th>kg/ft</th></tr></thead>
+<tbody>
+<tr><td>10</td><td>0.617</td><td>3/8″</td><td>0.42</td></tr>
+<tr><td>16</td><td>1.58</td><td>5/8″</td><td>1.07</td></tr>
+<tr><td>25</td><td>3.85</td><td>1″</td><td>2.62</td></tr>
+<tr><td>50</td><td>15.4</td><td>2″</td><td>10.5</td></tr>
+<tr><td>75</td><td>34.7</td><td>3″</td><td>23.6</td></tr>
+<tr><td>100</td><td>61.6</td><td>4″</td><td>42.0</td></tr>
+</tbody>
+</table></div>
+<p style="font-size:.82rem">Rounds: dia² × 0.00623 per metre · Hex: A/F² × 0.00679 · Square: side² × 0.00787.</p>
+<h3>Tolerances — drawn bars</h3>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Diameter over (mm)</th><th>Diameter up to (mm)</th><th>Tolerance, drawn bars (mm)</th></tr></thead>
+<tbody>
+<tr><td>=3</td><td>6</td><td>0 -0,08</td></tr>
+<tr><td>6</td><td>10</td><td>0 -0,09</td></tr>
+<tr><td>10</td><td>18</td><td>0 -0,11</td></tr>
+<tr><td>18</td><td>30</td><td>0 -0,13</td></tr>
+<tr><td>30</td><td>50</td><td>0 -0,16</td></tr>
+<tr><td>50</td><td>65</td><td>0 -0,19</td></tr>
+<tr><td>65</td><td>80</td><td>0 -0,30</td></tr>
+<tr><td>80</td><td>100</td><td>0 -0,35</td></tr>
+</tbody>
+</table></div>
+<h3>Tolerances — extruded bars</h3>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Diameter over (mm)</th><th>Diameter up to (mm)</th><th>Alloy group I (mm)</th><th>Alloy group II (mm)</th></tr></thead>
+<tbody>
+<tr><td>=8</td><td>18</td><td>+/- 0,22</td><td>+/- 0,30</td></tr>
+<tr><td>18</td><td>25</td><td>+/- 0,25</td><td>+/- 0,35</td></tr>
+<tr><td>25</td><td>40</td><td>+/- 0,30</td><td>+/- 0,40</td></tr>
+<tr><td>40</td><td>50</td><td>+/- 0,35</td><td>+/- 0,45</td></tr>
+<tr><td>50</td><td>65</td><td>+/- 0,40</td><td>+/- 0,50</td></tr>
+<tr><td>65</td><td>80</td><td>+/- 0,45</td><td>+/- 0,70</td></tr>
+<tr><td>80</td><td>100</td><td>+/- 0,55</td><td>+/- 0,90</td></tr>
+<tr><td>100</td><td>120</td><td>+/- 0,65</td><td>+/- 1,00</td></tr>
+<tr><td>120</td><td>150</td><td>+/- 0,80</td><td>+/- 1,20</td></tr>
+<tr><td>150</td><td>180</td><td>+/- 1,00</td><td>+/- 1,40</td></tr>
+<tr><td>180</td><td>220</td><td>+/- 1,15</td><td>+/- 1,70</td></tr>
+<tr><td>220</td><td>270</td><td>+/- 1,30</td><td>+/- 2,00</td></tr>
+<tr><td>270</td><td>320</td><td>+/- 1,60</td><td>+/- 2,50</td></tr>
+</tbody>
+</table></div>
+      </div>
+      <aside class="sidebar-card"><h4>Technical Info</h4>
+<a href="/technical">Overview</a>
+<a class="side-group" href="/technical/chemical-composition">Chemical Composition</a>
+<a class="side-sub" href="/technical/chemical-composition">Composition</a>
+<a class="side-sub" href="/technical/grades">Grades</a>
+<a href="/technical/mechanical-properties">Mechanical Properties</a>
+<a class="side-group" href="/technical/pipe-fittings">Pipe Fittings</a>
+<a class="side-sub" href="/technical/buttweld-fittings">Buttweld Fittings</a>
+<a class="side-sub" href="/technical/forged-fittings">Forged Fittings</a>
+<a class="side-sub" href="/technical/elbows">Elbows</a>
+<a class="side-sub" href="/technical/stub-ends">Stub-Ends</a>
+<a class="side-sub" href="/technical/tees">Tees</a>
+<a class="side-sub" href="/technical/reducers">Reducers</a>
+<a class="side-sub" href="/technical/caps">Caps</a>
+<a href="/technical/round-bars">Round Bar Data</a>
+<a href="/technical/pipe-data">Pipe Data</a>
+<a href="/technical/nickel-alloy-data">Nickel Alloy Data</a>
+<a href="/technical/flanges">Flange Data</a>
+<a href="/technical/weight-formula">Weight Formula</a>
+<a href="/technical/nonferrous">Non-Ferrous</a>
+<a href="/enquiry">Ask an Engineer →</a></aside>
+    </div>
+  </section>
+  <CtaBand />
+</BaseLayout>
