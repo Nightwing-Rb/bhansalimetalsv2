@@ -1,0 +1,11 @@
+
+> bhansali-metals@1.0.0 preview
+> astro preview --host --port 4321
+
+
+ astro  v4.16.19 ready in 14 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  http://100.64.0.2:4321/
+           http://10.69.33.2:4321/
+

@@ -2,18 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
 const TILES = [
-  { href: '/products/flanges', s: 'Flanges & components', t: 'Flanges', d: 'Industrial flanges for process connections and demanding service environments.' },
-  { href: '/products/pipe-fittings', s: 'Pipe fittings', t: 'Pipe Fittings', d: 'A focused range of fittings for routing, joining and adapting process piping systems.' },
-  { href: '/products/pipes-tubes', s: 'Pipes & tubes', t: 'Pipes & Tubes', d: 'Pipe and tube products supplied for fabrication, process systems and industrial maintenance.' },
-  { href: '/products/sheets-plates', s: 'Sheets & plates', t: 'Sheets & Plates', d: 'Flat products for fabrication, pressure applications and corrosion-sensitive environments.' },
-  { href: '/products/round-bars-squares', s: 'Round bars', t: 'Round Bars', d: 'Round bar supply for machining, fasteners, fabrication and engineered components.' },
-  { href: '/products/hex-bars', s: 'Hex bars', t: 'Hex Bars', d: 'Hexagonal bar products for components, fasteners and precision machining requirements.' },
-  { href: '/products/flat-bars', s: 'Flat bars', t: 'Flat Bars', d: 'Flat bar materials for brackets, supports, fabrication and structural applications.' },
-  { href: '/products/wire', s: 'Wire products', t: 'Wire', d: 'Wire forms for industrial fabrication and specialist applications.' },
-  { href: '/products/high-nickel-alloys', s: 'High-nickel alloys', t: 'High Nickel Alloys', d: 'Nickel-chromium-molybdenum alloy products for elevated temperature and corrosion resistance.' },
-  { href: '/products/duplex-super-duplex', s: 'Duplex alloys', t: 'Duplex & Super Duplex', d: 'Duplex and super-duplex stainless materials for challenging chloride and marine environments.' },
-  { href: '/products/stainless-steel', s: 'Stainless steel', t: 'Stainless Steel', d: 'Versatile stainless steel product forms for industrial, fabrication and process applications.' },
-  { href: '/products/fasteners', s: 'Fasteners', t: 'Fasteners', d: 'M6–M64 bolts, nuts, washers and threaded bar in stainless and exotic alloys.' },
+  { href: '/products/flanges', s: 'Flanges & components', t: 'Flanges', d: 'Industrial flanges for process connections and demanding service environments.', img: '/product-flanges.webp' },
+  { href: '/products/pipe-fittings', s: 'Pipe fittings', t: 'Pipe Fittings', d: 'A focused range of fittings for routing, joining and adapting process piping systems.', img: '/product-pipe-fittings.webp' },
+  { href: '/products/pipes-tubes', s: 'Pipes & tubes', t: 'Pipes & Tubes', d: 'Pipe and tube products supplied for fabrication, process systems and industrial maintenance.', img: '/product-pipes-tubes.webp' },
+  { href: '/products/sheets-plates', s: 'Sheets & plates', t: 'Sheets & Plates', d: 'Flat products for fabrication, pressure applications and corrosion-sensitive environments.', img: '/product-sheets-plates.webp' },
+  { href: '/products/round-bars-squares', s: 'Round bars', t: 'Round Bars', d: 'Round bar supply for machining, fasteners, fabrication and engineered components.', img: '/product-round-bars.webp' },
+  { href: '/products/hex-bars', s: 'Hex bars', t: 'Hex Bars', d: 'Hexagonal bar products for components, fasteners and precision machining requirements.', img: '/product-hex-bars.webp' },
+  { href: '/products/flat-bars', s: 'Flat bars', t: 'Flat Bars', d: 'Flat bar materials for brackets, supports, fabrication and structural applications.', img: '/product-flat-bars.webp' },
+  { href: '/products/wire', s: 'Wire products', t: 'Wire', d: 'Wire forms for industrial fabrication and specialist applications.', img: '/product-wire.webp' },
+  { href: '/products/high-nickel-alloys', s: 'High-nickel alloys', t: 'High Nickel Alloys', d: 'Nickel-chromium-molybdenum alloy products for elevated temperature and corrosion resistance.', img: '/product-high-nickel.webp' },
+  { href: '/products/duplex-super-duplex', s: 'Duplex alloys', t: 'Duplex & Super Duplex', d: 'Duplex and super-duplex stainless materials for challenging chloride and marine environments.', img: '/product-duplex.webp' },
+  { href: '/products/stainless-steel', s: 'Stainless steel', t: 'Stainless Steel', d: 'Versatile stainless steel product forms for industrial, fabrication and process applications.', img: '/product-stainless.webp' },
+  { href: '/products/fasteners', s: 'Fasteners', t: 'Fasteners', d: 'M6–M64 bolts, nuts, washers and threaded bar in stainless and exotic alloys.', img: '/product-fasteners.webp' },
 ];
 ---
 <BaseLayout title="Products" active="/products">
@@ -28,7 +28,7 @@ const TILES = [
   <section class="section">
     <div class="shell">
       <div class="productgrid">
-        {TILES.map(t => (<a class="product" href={t.href}><span>{t.s}</span><h3>{t.t}</h3><p>{t.d}</p></a>))}
+        {TILES.map(t => (<a class="product" href={t.href}><img src={t.img} alt={t.t} loading="lazy" /><div class="tile-text"><span>{t.s}</span><h3>{t.t}</h3><p>{t.d}</p></div></a>))}
       </div>
     </div>
   </section>

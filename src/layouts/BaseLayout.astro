@@ -26,7 +26,7 @@ const { title, description = 'Bhansali Metals — stainless steel, high-nickel a
     <main>
       <slot />
     </main>
-    <button id="toTop" type="button" aria-label="Back to top">↑</button>
+    <button id="toTop" type="button" aria-label="Back to top"><svg class="ic" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
     <script>
       (() => {
         // Lenis smooth scroll (skipped for reduced-motion users).
@@ -119,7 +119,7 @@ const { title, description = 'Bhansali Metals — stainless steel, high-nickel a
             }
             const old = btn.getAttribute('data-label') || btn.textContent;
             btn.setAttribute('data-label', old || '');
-            btn.textContent = 'Copied ✓';
+            btn.innerHTML = 'Copied <svg class="ic" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
             btn.classList.add('copied');
             setTimeout(() => {
               btn.textContent = old;

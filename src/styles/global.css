@@ -105,6 +105,13 @@ h4{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;margi
 .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border:1px solid var(--line);background:var(--line)}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 .product,.card{min-height:260px;background:#fff;padding:1.5rem;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;transition:.18s;border:0;border-radius:0;box-shadow:none;margin:0}
+a.product{min-height:360px;justify-content:flex-end;overflow:hidden;padding:0;position:relative;background:var(--ink)}
+a.product img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;margin:0;transition:transform .4s ease}
+a.product:hover img{transform:scale(1.04)}
+a.product .tile-text{position:relative;z-index:1;padding:5rem 1.5rem 1.5rem;color:#fff;background:linear-gradient(to top,rgba(3,10,18,.92),rgba(3,10,18,.45) 55%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);-webkit-mask-image:linear-gradient(to top,#000 55%,transparent);mask-image:linear-gradient(to top,#000 55%,transparent)}
+a.product .tile-text span{color:#9ec2ff}
+a.product .tile-text h3{color:#fff}
+a.product .tile-text p{color:#cfd8e3}
 a.card,a.card h3{color:var(--ink)}
 .product:hover,.card:hover{background:#dfe8f7;transform:translateY(-3px)}
 .product span,.card .badge{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:none;padding:0}
@@ -238,6 +245,8 @@ textarea{min-height:110px;resize:vertical}
 .footergrid span{font-size:13px;color:#d2dce4}
 .footermeta{border-top:1px solid #1a2a38;padding-top:1rem;font:10px var(--mono);display:flex;justify-content:space-between;gap:1rem;color:#7890a5}
 .inspect-badges{display:none}
+svg.ic{width:.85em;height:.85em;vertical-align:-.12em;flex:none}
+h3 svg.ic{width:.9em;height:.9em}
 
 /* inspection-agency marquee */
 .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:2rem 0}
