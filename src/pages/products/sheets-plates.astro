@@ -1,13 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../../components/PageHero.astro';
 import CtaBand from '../../components/CtaBand.astro';
 ---
 <BaseLayout title="Sheets & Plates" active="/products">
-  <PageHero eyebrow="Inconel + Stainless Flat Products" title="Sheets & Plates" description="High-quality Inconel sheets and plates with excellent finish, high-temperature strength and corrosion resistance — custom-designed to client requirements." />
+  <section class="pagebanner">
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">Inconel + Stainless Flat Products</p>
+      <h1>Sheets & Plates</h1>
+      <p>High-quality Inconel sheets and plates with excellent finish, high-temperature strength and corrosion resistance — custom-designed to client requirements.</p>
+    </div>
+  </section>
+  <section class="visual">
+    <img src="/product-sheets-plates.webp" alt="Sheets and Plates product photography" />
+  </section>
   <section class="section">
-    <div class="container layout-2col">
-      <div class="prose">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Product briefing</aside>
+      <div>
 <h3>Sheets & plates</h3>
 <p>We hold expertise in manufacturing an extensive range of high-quality Inconel sheets and plates appreciated worldwide — for structural, mechanical and general engineering. Designed to international standards with excellent finish and resistance to high temperature and corrosion; custom-designed to specific requirements.</p>
         <div class="details">
@@ -20,32 +29,10 @@ import CtaBand from '../../components/CtaBand.astro';
           <span>UNS 8800 (Inconel 800) · UNS 8825 (Inconel 825) · UNS 6600 (Inconel 600) · UNS 6601 (Inconel 601) · UNS 6625 (Inconel 625) · Austenitic stainless steels: ASTM 304/304L and ASTM 316/316L · Duplex stainless steel: SAF 2205 / UNS S31803 / EN 1.4462 · Super-duplex stainless steel: SAF 2507 / UNS S32750 / EN 1.4410</span>
         </div>
         </div>
+        <p style="margin-top:2rem">
+          <a class="button" href="/enquiry">Request a quote ↗</a>
+        </p>
       </div>
-      <aside class="sidebar-card"><h4>Our Products</h4>
-<span class="side-group">Rods & Bars</span>
-<a class="side-sub" href="/products/bright-bars">Bright Bars</a>
-<a class="side-sub" href="/products/black-bars">Black Bars</a>
-<a class="side-sub" href="/products/round-bars-squares">Round / Square / Hex</a>
-<a class="side-sub" href="/products/hex-bars">Hex Bars</a>
-<a class="side-sub" href="/products/flat-bars">Flat Bars</a>
-<a class="side-sub" href="/products/wire">Wire</a>
-<a href="/products/sheets-plates">Sheets & Plates</a>
-<a href="/products/pipes-tubes">Pipes & Tubes</a>
-<span class="side-group">Components</span>
-<a class="side-sub" href="/products/flanges">Flanges</a>
-<a class="side-sub" href="/products/fasteners">Fasteners</a>
-<a class="side-sub" href="/products/pipe-fittings">Pipe Fittings</a>
-<span class="side-group">High-Nickel Alloys</span>
-<a class="side-sub" href="/products/high-nickel-alloys">All High-Nickel Alloys</a>
-<a class="side-sub" href="/products/monel-500">Monel 500</a>
-<a class="side-sub" href="/products/hastelloy-c276">Hastelloy C-276</a>
-<a class="side-sub" href="/products/hastelloy-c22">Hastelloy C-22</a>
-<a class="side-sub" href="/products/hastelloy-b2">Hastelloy B2</a>
-<a class="side-sub" href="/products/hastelloy-x">Hastelloy X</a>
-<a class="side-sub" href="/products/nickel-200-201">Nickel 200 / 201</a>
-<a href="/products/duplex-super-duplex">Duplex & Super Duplex</a>
-<a href="/products/stainless-steel">Stainless Steel</a>
-<a href="/enquiry">Get Quote →</a></aside>
     </div>
   </section>
   <CtaBand />

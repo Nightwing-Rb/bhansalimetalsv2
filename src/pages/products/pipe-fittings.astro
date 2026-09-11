@@ -1,13 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../../components/PageHero.astro';
 import CtaBand from '../../components/CtaBand.astro';
 ---
 <BaseLayout title="Pipe Fittings — Buttweld & Forged" active="/products">
-  <PageHero eyebrow="Elbows · Unions · Threadolets" title="Pipe Fittings" description="A wide range of Inconel fittings for automotive, oil & gas, engineering, construction and process industries — corrosion, abrasion and heat resistant, simple to install." />
+  <section class="pagebanner">
+    <div class="shell">
+      <p class="eyebrow" style="color:var(--blue)">Elbows · Unions · Threadolets</p>
+      <h1>Pipe Fittings</h1>
+      <p>A wide range of Inconel fittings for automotive, oil & gas, engineering, construction and process industries — corrosion, abrasion and heat resistant, simple to install.</p>
+    </div>
+  </section>
+  <section class="visual">
+    <img src="/product-pipe-fittings.webp" alt="Pipe Fittings product photography" />
+  </section>
   <section class="section">
-    <div class="container layout-2col">
-      <div class="prose">
+    <div class="shell productcontent">
+      <aside>Bhansali Metals<br />Product briefing</aside>
+      <div>
 <h3>Pipe fittings</h3>
 <p>Owing to our rich industrial experience, we offer a wide range of Inconel fittings meeting the application needs of automotive, oil & gas, engineering, construction and various other industries. Designed using advanced technology, these fittings resist corrosion, abrasive chemicals and high temperature. Highly durable and simple to install, they come in different standards and grades — and can be fabricated to specific application requirements.</p>
         <div class="details">
@@ -38,32 +47,10 @@ import CtaBand from '../../components/CtaBand.astro';
 <p>High-quality Inconel threadolets in different technical specifications — accurate design and precision machining for zero-error parts with close tolerances and excellent finishes, and great resistance to heat and corrosion. Size 15 NB to 80 NB.</p>
 <p style="margin-top:1.5rem"><a class="card-link" href="/technical/pipe-fittings">Open the dimension tables →</a></p>
 
+        <p style="margin-top:2rem">
+          <a class="button" href="/enquiry">Request a quote ↗</a>
+        </p>
       </div>
-      <aside class="sidebar-card"><h4>Our Products</h4>
-<span class="side-group">Rods & Bars</span>
-<a class="side-sub" href="/products/bright-bars">Bright Bars</a>
-<a class="side-sub" href="/products/black-bars">Black Bars</a>
-<a class="side-sub" href="/products/round-bars-squares">Round / Square / Hex</a>
-<a class="side-sub" href="/products/hex-bars">Hex Bars</a>
-<a class="side-sub" href="/products/flat-bars">Flat Bars</a>
-<a class="side-sub" href="/products/wire">Wire</a>
-<a href="/products/sheets-plates">Sheets & Plates</a>
-<a href="/products/pipes-tubes">Pipes & Tubes</a>
-<span class="side-group">Components</span>
-<a class="side-sub" href="/products/flanges">Flanges</a>
-<a class="side-sub" href="/products/fasteners">Fasteners</a>
-<a class="side-sub" href="/products/pipe-fittings">Pipe Fittings</a>
-<span class="side-group">High-Nickel Alloys</span>
-<a class="side-sub" href="/products/high-nickel-alloys">All High-Nickel Alloys</a>
-<a class="side-sub" href="/products/monel-500">Monel 500</a>
-<a class="side-sub" href="/products/hastelloy-c276">Hastelloy C-276</a>
-<a class="side-sub" href="/products/hastelloy-c22">Hastelloy C-22</a>
-<a class="side-sub" href="/products/hastelloy-b2">Hastelloy B2</a>
-<a class="side-sub" href="/products/hastelloy-x">Hastelloy X</a>
-<a class="side-sub" href="/products/nickel-200-201">Nickel 200 / 201</a>
-<a href="/products/duplex-super-duplex">Duplex & Super Duplex</a>
-<a href="/products/stainless-steel">Stainless Steel</a>
-<a href="/enquiry">Get Quote →</a></aside>
     </div>
   </section>
   <CtaBand />

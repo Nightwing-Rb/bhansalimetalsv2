@@ -4,7 +4,7 @@ const { active = '/' } = Astro.props;
 const isActive = (h: string) => (h === '/' ? active === '/' : active.startsWith(h));
 ---
 <div class="top"><div class="shell"><a href="mailto:sales@bhansalimetals.com">sales@bhansalimetals.com</a><span>Manufacturer · Exporter · Domestic Supplier</span><a href="tel:+912267438356">+91 22 6743 8356</a></div></div>
-<header class="header"><div class="shell nav"><a class="brand" href="/"><img src="/logo.png" alt="Bhansali Metals" /></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button><nav class="links" id="site-menu">
+<header class="header"><div class="shell nav"><a class="brand" href="/"><img src="/logo.webp" alt="Bhansali Metals" /></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button><nav class="links" id="site-menu">
   <span class="has-dropdown"><a href="/products" class={isActive('/products') ? 'active' : ''}>Products</a>
     <span class="dropdown">
       <strong>Bar & Rod</strong>

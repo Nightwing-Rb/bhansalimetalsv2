@@ -23,7 +23,7 @@ const TILES = [
 ];
 ---
 <BaseLayout title="Technical Information" active="/technical">
-  <PageHero eyebrow="Engineers' Library" title="Technical information hub" description="Chemical & mechanical data, pipe / flange / fitting dimensions, nickel-alloy data, weight formulae — everything to size your BOM right." banner="/banner-technical.png" bannerAlt="Engineering bench with pipe drawings and steel samples" />
+  <PageHero eyebrow="Engineers' Library" title="Technical information hub" description="Chemical & mechanical data, pipe / flange / fitting dimensions, nickel-alloy data, weight formulae — everything to size your BOM right." banner="/banner-technical.webp" bannerAlt="Engineering bench with pipe drawings and steel samples" />
   <section class="section"><div class="container"><div class="grid-3">
     {TILES.map(t => (<a class="card" href={t.href}><div class="card-body"><span class="badge">{t.s}</span><h3>{t.t} →</h3><p>{t.d}</p></div></a>))}
   </div></div></section>
